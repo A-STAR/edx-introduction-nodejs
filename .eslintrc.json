@@ -16,6 +16,7 @@
     "no-console": "off",
     "func-names": "off",
     "space-before-function-paren": "off",
+    "prefer-arrow-callback": "off",
     "comma-dangle": "off",
     "no-plusplus": "off"
   }
