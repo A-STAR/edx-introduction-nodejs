@@ -1,6 +1,12 @@
 const express = require('express');
+const bodyParser = require('body-parser');
+const morgan = require('morgan');
 
 const app = express();
+
+app.use(bodyParser.json());
+
+app.use(morgan('dev'));
 
 app.use((request, response, next) => {
   console.log(`${request.method}: ${request.url}`);
@@ -40,7 +46,9 @@ app.get(
   }
 );
 
-app.get('/transactions', (request, response) => {
+app.post('/transactions', (request, response) => {
+  console.log(request.body);
+
   response.send({
     message: 'transactions'
   });
